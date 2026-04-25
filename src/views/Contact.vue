@@ -31,9 +31,10 @@ const sendMessage = () => {
         <!-- LEFT SIDE -->
         <div class="col-lg-5 left-side p-5">
           <h3 class="fw-bold mb-4">Get in touch</h3>
-        <p class="text-white mb-4">
-  Feel free to contact us for any question or partnership.
-</p>
+          <p class="text-white mb-4">
+            Feel free to contact us for any question or partnership.
+          </p>
+
           <div class="info-item">
             <div class="icon"><i class="bi bi-geo-alt"></i></div>
             <div>
@@ -95,9 +96,11 @@ const sendMessage = () => {
 </template>
 
 <style scoped>
-/* SECTION BACKGROUND */
+/* 🌌 BACKGROUND SAMA KAYAK PAGE LAIN */
 .contact-section {
-  background: linear-gradient(135deg, #000000, #303131, #1d1e1f);
+  background: linear-gradient(270deg, #000000, #1a1a1a, #333333, #111111);
+  background-size: 800% 800%;
+  animation: gradientMove 12s ease infinite;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -148,7 +151,7 @@ const sendMessage = () => {
   background: white;
 }
 
-/* INPUT STYLE */
+/* INPUT */
 .custom-input {
   border-radius: 12px;
   border: none;
@@ -188,5 +191,12 @@ const sendMessage = () => {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* 🌊 GRADIENT */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 </style>

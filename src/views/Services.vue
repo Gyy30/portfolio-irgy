@@ -25,15 +25,16 @@ onMounted(() => {
   });
 });
 </script>
+
 <template>
-<section class="services">
-  <div class="section-title">
+<section class="services fade-in">
+  <div class="section-title fade-up">
     <h2>Our Services</h2>
     <p>What Can We Help You With Today?</p>
   </div>
 
   <div class="services-grid">
-    <div class="card">
+    <div class="card fade-up delay-1">
       <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" />
       <div class="card-body">
         <h3>Residential Services</h3>
@@ -42,7 +43,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <div class="card">
+    <div class="card fade-up delay-2">
       <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" />
       <div class="card-body">
         <h3>Commercial Services</h3>
@@ -51,7 +52,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <div class="card">
+    <div class="card fade-up delay-3">
       <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0" />
       <div class="card-body">
         <h3>Maintenance & Repair</h3>
@@ -64,17 +65,16 @@ onMounted(() => {
 </template>
 
 <style scoped>
+/* 🌌 BACKGROUND */
 .services {
   padding: 120px 80px;
-  background: linear-gradient(
-    to bottom,
-    #000000 0%,
-    #28292b 50%,
-    #252525 100%
-  );
+  background: linear-gradient(270deg, #000000, #1a1a1a, #333333, #111111);
+  background-size: 800% 800%;
+  animation: gradientMove 12s ease infinite;
   color: white;
 }
 
+/* TITLE */
 .section-title {
   text-align: center;
   margin-bottom: 70px;
@@ -91,25 +91,24 @@ onMounted(() => {
   font-size: 17px;
 }
 
+/* GRID */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
 }
 
+/* CARD */
 .card {
   background: #4d5055;
   border-radius: 18px;
   overflow: hidden;
-  transition: all 0.35s ease;
+  transition: transform 0.2s ease, box-shadow 0.35s ease;
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transform-style: preserve-3d;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(38, 42, 48, 0.25);
-}
-
+/* IMAGE */
 .card img {
   width: 100%;
   height: 220px;
@@ -121,6 +120,7 @@ onMounted(() => {
   transform: scale(1.05);
 }
 
+/* BODY */
 .card-body {
   padding: 30px;
 }
@@ -128,7 +128,6 @@ onMounted(() => {
 .card-body h3 {
   font-size: 20px;
   margin-bottom: 12px;
-  color: White;
 }
 
 .card-body p {
@@ -137,6 +136,7 @@ onMounted(() => {
   font-size: 15px;
 }
 
+/* BUTTON */
 .card-body button {
   padding: 10px 22px;
   border: none;
@@ -151,4 +151,37 @@ onMounted(() => {
   background: #2563eb;
 }
 
+/* ✨ FADE ANIMATION */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌊 GRADIENT */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 </style>

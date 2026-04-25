@@ -25,7 +25,6 @@ const handleLogin = () => {
 
   loading.value = true
 
-  // simulasi API
   setTimeout(() => {
     loading.value = false
 
@@ -33,7 +32,7 @@ const handleLogin = () => {
       localStorage.setItem('user_email', email.value)
     }
 
-    router.push('/') // redirect setelah login
+    router.push('/')
   }, 1500)
 }
 </script>
@@ -94,7 +93,9 @@ const handleLogin = () => {
               Remember me
             </label>
           </div>
-          <a href="#" class="text-secondary small">Forgot password?</a>
+        <router-link to="/forgot" class="text-secondary small">
+  Forgot password?
+</router-link>
         </div>
 
         <button
@@ -127,11 +128,15 @@ const handleLogin = () => {
 </template>
 
 <style scoped>
+/* 🌌 BACKGROUND SAMA KAYAK PAGE LAIN */
 .login-wrapper {
   min-height: 100vh;
-  background: radial-gradient(circle at top right, #555, #0b0b0b);
+  background: linear-gradient(270deg, #000000, #1a1a1a, #333333, #111111);
+  background-size: 800% 800%;
+  animation: gradientMove 12s ease infinite;
 }
 
+/* CARD */
 .login-card {
   width: 100%;
   max-width: 420px;
@@ -142,6 +147,7 @@ const handleLogin = () => {
   box-shadow: 0 30px 80px rgba(0,0,0,0.7);
 }
 
+/* ANIMATION */
 .animate-in {
   animation: fadeUp 0.8s ease forwards;
 }
@@ -151,6 +157,7 @@ const handleLogin = () => {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* LOGO */
 .logo {
   width: 48px;
   height: 48px;
@@ -158,6 +165,7 @@ const handleLogin = () => {
   background: conic-gradient(from 180deg, #aaa, #333);
 }
 
+/* INPUT */
 .form-dark {
   background: rgba(30,30,30,0.9);
   border: 1px solid transparent;
@@ -171,6 +179,7 @@ const handleLogin = () => {
   box-shadow: none;
 }
 
+/* DIVIDER */
 .divider {
   display: flex;
   align-items: center;
@@ -185,5 +194,12 @@ const handleLogin = () => {
   height: 1px;
   background: #333;
   margin: 0 10px;
+}
+
+/* 🌊 GRADIENT ANIMATION */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 </style>

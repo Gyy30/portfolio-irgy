@@ -4,6 +4,7 @@ import About from '../views/About.vue'
 import Login from '../views/Login.vue'
 import Services from '../views/Services.vue'
 import Contact from '../views/Contact.vue'
+import Forgot from '../views/Forgot.vue'
 
 
 const routes = [
@@ -34,6 +35,10 @@ const routes = [
   {
    path: '/contact',
    component: Contact
+  },
+  {
+   path: '/forgot',
+   component: Forgot
   }
 ]
 
