@@ -151,7 +151,7 @@ onMounted(() => {
   background: #2563eb;
 }
 
-/* ✨ FADE ANIMATION */
+/* ✨ FADE */
 .fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
@@ -183,5 +183,61 @@ onMounted(() => {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* 📱 RESPONSIVE FIX (INI YANG PENTING) */
+@media (max-width: 992px) {
+  .services {
+    padding: 80px 40px;
+  }
+
+  .section-title h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 60px 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .section-title p {
+    font-size: 15px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  .card-body h3 {
+    font-size: 18px;
+  }
+
+  .card-body p {
+    font-size: 14px;
+  }
 }
 </style>
